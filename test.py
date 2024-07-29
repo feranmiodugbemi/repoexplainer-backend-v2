@@ -77,7 +77,8 @@ def main():
         rag_chain = create_retrieval_chain(retriever, question_answer_chain)
 
         # Invoke the chain
-        response = rag_chain.invoke({"input": "Help me write tests for the message sockets route"})
+        question = input("What is your question: ")
+        response = rag_chain.invoke({"input": question})
         print(response["answer"])
 
         sys.exit(0)  # Exit with success status
